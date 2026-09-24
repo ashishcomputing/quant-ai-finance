@@ -10,6 +10,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenTerminal }) => {
   const navItems = [
     { id: 'overview', label: 'Overview' },
+    { id: 'ashfx-pipeline', label: '⚡ ASHFX AI Pipeline' },
     { id: 'markov', label: 'Markov State Engine' },
     { id: 'workflows', label: 'Financial Workflows' },
     { id: 'agents', label: 'Digital Employees' },

@@ -7,9 +7,10 @@ import { AgentSwarmConsole } from './components/AgentSwarmConsole';
 import { StatefulMemoryInspector } from './components/StatefulMemoryInspector';
 import { RoiImpactSection } from './components/RoiImpactSection';
 import { LiveInteractiveSandbox } from './components/LiveInteractiveSandbox';
+import { AshfxPipelineVisualizer } from './components/AshfxPipelineVisualizer';
 import { QuantChatBot } from './components/QuantChatBot';
 import { Footer } from './components/Footer';
-import { Layers, Activity, Database, TrendingUp, Users, Terminal, X } from 'lucide-react';
+import { Layers, Activity, Database, TrendingUp, Users, Terminal, X, Cpu } from 'lucide-react';
 
 export function App() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -51,6 +52,9 @@ export function App() {
             {/* Quick Interactive Sandbox */}
             <LiveInteractiveSandbox />
 
+            {/* ASHFX Finance AI: Tri-Branch Intent Routing & Zero-Hallucination Pipeline */}
+            <AshfxPipelineVisualizer />
+
             {/* Core Feature 1: Markov State Visualizer */}
             <MarkovStateVisualizer />
 
@@ -65,6 +69,17 @@ export function App() {
 
             {/* Core Feature 5: ROI Impact */}
             <RoiImpactSection />
+          </div>
+        )}
+
+        {/* Dedicated ASHFX AI Pipeline Tab */}
+        {activeTab === 'ashfx-pipeline' && (
+          <div className="space-y-6 pt-4">
+            <div className="flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              <Cpu className="w-4 h-4 text-emerald-600" />
+              <span>ASHFX Tri-Branch Intent Routing &amp; Grounding Architecture</span>
+            </div>
+            <AshfxPipelineVisualizer />
           </div>
         )}
 
