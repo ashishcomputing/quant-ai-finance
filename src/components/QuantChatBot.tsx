@@ -240,6 +240,16 @@ export const QuantChatBot: React.FC = () => {
     }
   }, [messages, isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const handleSelectModel = (modelId: string) => {
     setSelectedModelId(modelId);
     localStorage.setItem('quant_selected_model', modelId);
@@ -518,37 +528,37 @@ export const QuantChatBot: React.FC = () => {
         </button>
       )}
 
-      {/* Floating Chat Window - Liquid Glass Aesthetic */}
+      {/* Floating Chat Window - Minimal Liquid Glass Aesthetic */}
       {isOpen && (
         <div
-          className={`fixed z-50 rounded-[32px] overflow-hidden flex flex-col transition-all duration-300 animate-fadeIn bg-slate-950/80 backdrop-blur-3xl backdrop-saturate-200 border border-white/15 text-slate-100 shadow-[0_32px_90px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.25)] ${
+          className={`fixed z-50 rounded-[28px] overflow-hidden flex flex-col transition-all duration-300 animate-fadeIn bg-slate-950/85 backdrop-blur-3xl backdrop-saturate-200 border border-white/20 text-slate-100 shadow-[0_24px_70px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.3)] ${
             isExpanded
               ? 'inset-4 sm:inset-10'
-              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[95vw] sm:w-[490px] h-[670px] max-h-[92vh]'
+              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[94vw] sm:w-[385px] h-[520px] max-h-[82vh]'
           }`}
         >
           {/* Fluid Ambient Light Spots (Dia Glass Glow) */}
-          <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/3 -right-24 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 left-1/4 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -left-24 w-60 h-60 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 -right-24 w-60 h-60 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 left-1/4 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Liquid Glass Top Header */}
-          <div className="px-5 py-3.5 bg-white/[0.04] backdrop-blur-2xl border-b border-white/10 flex items-center justify-between relative z-10">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-2xl bg-gradient-to-tr from-white/20 to-white/5 border border-white/30 backdrop-blur-xl flex items-center justify-center text-white font-bold text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)]">
+          <div className="px-4 py-2.5 bg-white/[0.04] backdrop-blur-2xl border-b border-white/10 flex items-center justify-between relative z-10">
+            <div className="flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-white/20 to-white/5 border border-white/30 backdrop-blur-xl flex items-center justify-center text-white font-bold text-xs shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)]">
                 <span className="font-serif italic text-emerald-300">q</span>
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-xs">
+                <div className="flex items-center gap-1.5">
+                  <h3 className="text-xs font-bold tracking-tight text-white drop-shadow-xs">
                     Quant Super-Intelligence
                   </h3>
-                  <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+                  <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
                     Dia Liquid
                   </span>
                 </div>
                 {/* Live Crypto Price Pill */}
-                <div className="flex items-center gap-2 text-[10px] text-slate-300 font-mono mt-0.5">
+                <div className="flex items-center gap-2 text-[9px] text-slate-300 font-mono">
                   {liveBtcPrice ? (
                     <span className="text-emerald-400 font-semibold flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_rgba(52,211,153,0.9)]"></span>
@@ -563,10 +573,10 @@ export const QuantChatBot: React.FC = () => {
             </div>
 
             {/* Header Action Controls */}
-            <div className="flex items-center gap-1.5 text-slate-300">
+            <div className="flex items-center gap-1 text-slate-300">
               <button
                 onClick={() => setShowSettings(!showSettings)}
-                className={`p-2 rounded-full border transition backdrop-blur-md ${
+                className={`p-1.5 rounded-full border transition backdrop-blur-md ${
                   showSettings 
                     ? 'text-emerald-300 bg-white/15 border-emerald-400/40 shadow-xs' 
                     : 'bg-white/[0.06] hover:bg-white/[0.14] border-white/10 hover:text-white'
@@ -578,18 +588,21 @@ export const QuantChatBot: React.FC = () => {
 
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="p-2 rounded-full bg-white/[0.06] hover:bg-white/[0.14] border border-white/10 hover:text-white transition backdrop-blur-md hidden sm:block"
+                className="p-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.14] border border-white/10 hover:text-white transition backdrop-blur-md hidden sm:block"
                 title={isExpanded ? 'Collapse' : 'Expand'}
               >
                 {isExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
               </button>
 
+              {/* Close Button - Clear, Prominent & Minimal */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-full bg-white/[0.06] hover:bg-rose-500/20 hover:border-rose-400/40 border border-white/10 hover:text-rose-200 transition backdrop-blur-md"
-                title="Close Chat"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 hover:bg-rose-500/25 border border-white/20 hover:border-rose-400/40 text-slate-200 hover:text-rose-200 transition-all text-xs font-semibold backdrop-blur-md shadow-xs group"
+                title="Close Chat (or press Esc)"
+                aria-label="Close Chat"
               >
-                <X className="w-3.5 h-3.5" />
+                <X className="w-3.5 h-3.5 group-hover:rotate-90 transition-transform duration-200 text-rose-300" />
+                <span className="text-[11px]">Close</span>
               </button>
             </div>
           </div>
