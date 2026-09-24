@@ -485,138 +485,154 @@ export const QuantChatBot: React.FC = () => {
 
   return (
     <>
-      {/* Floating Launcher Action Button */}
+      {/* Floating Launcher Action Button - Dia Liquid Glass Orb */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-gray-950 text-white shadow-2xl hover:bg-gray-800 hover:scale-105 transition-all duration-200 border border-gray-700 group"
-          title="Open Quant Super-Intelligence Chatbot"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-full bg-slate-950/75 hover:bg-slate-900/85 backdrop-blur-3xl backdrop-saturate-200 border border-white/20 text-white shadow-[0_20px_60px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 transition-all duration-300 group overflow-hidden"
+          title="Open Quant Super-Intelligence (Dia Liquid Glass)"
         >
-          <div className="relative w-7 h-7 rounded-full bg-white flex items-center justify-center text-gray-950 font-bold text-sm">
-            <span className="font-serif italic">q</span>
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          {/* Subtle Aurora Sheen */}
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-teal-500/10 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm pointer-events-none" />
+
+          {/* Liquid Glass Orb */}
+          <div className="relative w-8 h-8 rounded-full bg-gradient-to-tr from-white/25 via-white/10 to-transparent border border-white/30 backdrop-blur-xl flex items-center justify-center text-white font-bold text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)]">
+            <span className="font-serif italic text-emerald-300">q</span>
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]"></span>
           </div>
-          <div className="flex flex-col text-left">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold tracking-tight">Quant AI</span>
+
+          <div className="flex flex-col text-left relative z-10">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold tracking-tight text-white drop-shadow-xs">Quant AI</span>
               {liveBtcPrice && (
-                <span className="text-[10px] text-emerald-400 font-mono font-semibold">
+                <span className="text-[10px] text-emerald-300 font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 backdrop-blur-md shadow-xs">
                   BTC {liveBtcPrice}
                 </span>
               )}
             </div>
-            <span className="text-[10px] text-gray-400 font-medium leading-none">
-              Multi-Model AI Assistant
+            <span className="text-[10px] text-slate-400 font-medium leading-none mt-0.5">
+              Claude for Dia Liquid OS
             </span>
           </div>
         </button>
       )}
 
-      {/* Floating Chat Window */}
+      {/* Floating Chat Window - Liquid Glass Aesthetic */}
       {isOpen && (
         <div
-          className={`fixed z-50 bg-white rounded-3xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transition-all duration-300 animate-fadeIn ${
+          className={`fixed z-50 rounded-[32px] overflow-hidden flex flex-col transition-all duration-300 animate-fadeIn bg-slate-950/80 backdrop-blur-3xl backdrop-saturate-200 border border-white/15 text-slate-100 shadow-[0_32px_90px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.25)] ${
             isExpanded
               ? 'inset-4 sm:inset-10'
-              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[95vw] sm:w-[480px] h-[660px] max-h-[92vh]'
+              : 'bottom-4 right-4 sm:bottom-6 sm:right-6 w-[95vw] sm:w-[490px] h-[670px] max-h-[92vh]'
           }`}
         >
-          {/* Chat Window Top Header */}
-          <div className="px-5 py-3 bg-gray-950 text-white flex items-center justify-between border-b border-gray-800">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center text-gray-950 font-bold text-sm">
-                <span className="font-serif italic">q</span>
+          {/* Fluid Ambient Light Spots (Dia Glass Glow) */}
+          <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 -right-24 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 left-1/4 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Liquid Glass Top Header */}
+          <div className="px-5 py-3.5 bg-white/[0.04] backdrop-blur-2xl border-b border-white/10 flex items-center justify-between relative z-10">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-2xl bg-gradient-to-tr from-white/20 to-white/5 border border-white/30 backdrop-blur-xl flex items-center justify-center text-white font-bold text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)]">
+                <span className="font-serif italic text-emerald-300">q</span>
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xs sm:text-sm font-bold tracking-tight">Quant Super-Intelligence</h3>
-                  <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
-                    TAOS v2.4
+                  <h3 className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-xs">
+                    Quant Super-Intelligence
+                  </h3>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 backdrop-blur-md">
+                    Dia Liquid
                   </span>
                 </div>
                 {/* Live Crypto Price Pill */}
-                <div className="flex items-center gap-2 text-[10px] text-gray-300 font-mono mt-0.5">
+                <div className="flex items-center gap-2 text-[10px] text-slate-300 font-mono mt-0.5">
                   {liveBtcPrice ? (
-                    <span className="text-emerald-400 font-bold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_rgba(52,211,153,0.9)]"></span>
                       BTC: {liveBtcPrice}
                     </span>
                   ) : (
                     <span>Fetching live feeds...</span>
                   )}
-                  {liveEthPrice && <span className="text-gray-400">ETH: {liveEthPrice}</span>}
+                  {liveEthPrice && <span className="text-slate-400">ETH: {liveEthPrice}</span>}
                 </div>
               </div>
             </div>
 
             {/* Header Action Controls */}
-            <div className="flex items-center gap-1 text-gray-400">
+            <div className="flex items-center gap-1.5 text-slate-300">
               <button
                 onClick={() => setShowSettings(!showSettings)}
-                className={`p-1.5 rounded-lg hover:text-white hover:bg-gray-800 transition ${
-                  showSettings ? 'text-emerald-400 bg-gray-800' : ''
+                className={`p-2 rounded-full border transition backdrop-blur-md ${
+                  showSettings 
+                    ? 'text-emerald-300 bg-white/15 border-emerald-400/40 shadow-xs' 
+                    : 'bg-white/[0.06] hover:bg-white/[0.14] border-white/10 hover:text-white'
                 }`}
                 title="API Key & Detailed Settings"
               >
-                <Settings2 className="w-4 h-4" />
+                <Settings2 className="w-3.5 h-3.5" />
               </button>
 
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="p-1.5 rounded-lg hover:text-white hover:bg-gray-800 transition hidden sm:block"
+                className="p-2 rounded-full bg-white/[0.06] hover:bg-white/[0.14] border border-white/10 hover:text-white transition backdrop-blur-md hidden sm:block"
                 title={isExpanded ? 'Collapse' : 'Expand'}
               >
-                {isExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                {isExpanded ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
               </button>
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg hover:text-white hover:bg-gray-800 transition"
+                className="p-2 rounded-full bg-white/[0.06] hover:bg-rose-500/20 hover:border-rose-400/40 border border-white/10 hover:text-rose-200 transition backdrop-blur-md"
                 title="Close Chat"
               >
-                <X className="w-4 h-4" />
+                <X className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
-          {/* Quick Model Selector Bar (Primary Model Switching Feature) */}
-          <div className="px-4 py-2 bg-gray-900 border-b border-gray-800 flex items-center justify-between text-xs text-white">
+          {/* Liquid Model Selector Bar (Dia Floating Pill Style) */}
+          <div className="px-4 py-2 bg-white/[0.02] backdrop-blur-xl border-b border-white/[0.08] flex items-center justify-between text-xs relative z-10">
             <div className="flex items-center gap-2">
-              <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Model:</span>
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Model:</span>
               <button
                 onClick={() => setShowModelDropdown(!showModelDropdown)}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-semibold text-white border border-gray-700 transition"
+                className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/20 text-xs font-semibold text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] backdrop-blur-md transition-all group"
               >
-                <span className="max-w-[200px] truncate">{activeModel.name}</span>
+                <span className="max-w-[210px] truncate text-slate-100">{activeModel.name}</span>
                 <span
-                  className={`text-[9px] px-1.5 py-0.2 rounded font-mono ${
-                    activeModel.isFree ? 'bg-emerald-900/80 text-emerald-300' : 'bg-amber-900/80 text-amber-300'
+                  className={`text-[9px] px-2 py-0.2 rounded-full font-mono border ${
+                    activeModel.isFree 
+                      ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30' 
+                      : 'bg-amber-500/20 text-amber-300 border-amber-400/30'
                   }`}
                 >
                   {activeModel.tier}
                 </span>
-                <ChevronDown className="w-3 h-3 text-gray-400" />
+                <ChevronDown className="w-3 h-3 text-slate-400 group-hover:text-white transition" />
               </button>
             </div>
 
             {/* Persona Indicator */}
-            <div className="text-[11px] text-gray-400 capitalize flex items-center gap-1">
+            <div className="text-[11px] text-slate-400 capitalize px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/5">
               <span>{agentPersona}</span>
             </div>
           </div>
 
-          {/* Model Switcher Dropdown Menu */}
+          {/* Model Switcher Dropdown Palette */}
           {showModelDropdown && (
-            <div className="p-3 bg-gray-950 border-b border-gray-800 text-xs text-white space-y-2 max-h-[300px] overflow-y-auto animate-fadeIn">
-              <div className="flex items-center justify-between text-[11px] font-bold uppercase text-gray-400 pb-1 border-b border-gray-800">
+            <div className="p-3.5 bg-slate-950/95 backdrop-blur-3xl border-b border-white/15 text-xs text-white space-y-3 max-h-[320px] overflow-y-auto animate-fadeIn relative z-20 shadow-2xl">
+              <div className="flex items-center justify-between text-[11px] font-bold uppercase text-slate-400 pb-1.5 border-b border-white/10">
                 <span>Select AI Model</span>
-                <span className="text-[10px] text-emerald-400">Live Switching</span>
+                <span className="text-[10px] text-emerald-400 font-mono">Live Instant Switching</span>
               </div>
 
               {/* Free Models */}
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 mb-1">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 mb-1.5">
                   100% Free Models (OpenRouter &amp; Pollinations)
                 </p>
                 <div className="space-y-1">
@@ -624,25 +640,27 @@ export const QuantChatBot: React.FC = () => {
                     <button
                       key={m.id}
                       onClick={() => handleSelectModel(m.id)}
-                      className={`w-full p-2 rounded-xl text-left transition flex items-center justify-between ${
+                      className={`w-full p-2.5 rounded-2xl text-left transition flex items-center justify-between backdrop-blur-md ${
                         selectedModelId === m.id
-                          ? 'bg-emerald-950 border border-emerald-700 text-white font-semibold'
-                          : 'bg-gray-900 hover:bg-gray-800 text-gray-200 border border-gray-800'
+                          ? 'bg-emerald-500/20 border border-emerald-400/40 text-white font-semibold shadow-[0_0_15px_rgba(52,211,153,0.15)]'
+                          : 'bg-white/[0.04] hover:bg-white/[0.1] text-slate-200 border border-white/10'
                       }`}
                     >
                       <div>
-                        <p className="text-xs font-bold">{m.name}</p>
-                        <p className="text-[10px] text-gray-400 line-clamp-1">{m.description}</p>
+                        <p className="text-xs font-bold text-white">{m.name}</p>
+                        <p className="text-[10px] text-slate-400 line-clamp-1">{m.description}</p>
                       </div>
-                      <span className="text-[10px] font-mono text-emerald-400 shrink-0 ml-2">FREE</span>
+                      <span className="text-[10px] font-mono font-bold text-emerald-300 shrink-0 ml-2 px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/30">
+                        FREE
+                      </span>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Fee / Premium Models */}
-              <div className="pt-2">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400 mb-1">
+              <div className="pt-2 border-t border-white/10">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400 mb-1.5">
                   Fee / Premium Models (Requires OpenRouter Key)
                 </p>
                 <div className="space-y-1">
@@ -650,32 +668,34 @@ export const QuantChatBot: React.FC = () => {
                     <button
                       key={m.id}
                       onClick={() => handleSelectModel(m.id)}
-                      className={`w-full p-2 rounded-xl text-left transition flex items-center justify-between ${
+                      className={`w-full p-2.5 rounded-2xl text-left transition flex items-center justify-between backdrop-blur-md ${
                         selectedModelId === m.id
-                          ? 'bg-amber-950 border border-amber-700 text-white font-semibold'
-                          : 'bg-gray-900 hover:bg-gray-800 text-gray-200 border border-gray-800'
+                          ? 'bg-amber-500/20 border border-amber-400/40 text-white font-semibold shadow-[0_0_15px_rgba(251,191,36,0.15)]'
+                          : 'bg-white/[0.04] hover:bg-white/[0.1] text-slate-200 border border-white/10'
                       }`}
                     >
                       <div>
-                        <p className="text-xs font-bold">{m.name}</p>
-                        <p className="text-[10px] text-gray-400 line-clamp-1">{m.description}</p>
+                        <p className="text-xs font-bold text-white">{m.name}</p>
+                        <p className="text-[10px] text-slate-400 line-clamp-1">{m.description}</p>
                       </div>
-                      <span className="text-[10px] font-mono text-amber-400 shrink-0 ml-2">KEY REQ</span>
+                      <span className="text-[10px] font-mono font-bold text-amber-300 shrink-0 ml-2 px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/30">
+                        KEY REQ
+                      </span>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Custom Model Input */}
-              <div className="pt-2 border-t border-gray-800">
-                <p className="text-[10px] font-semibold text-gray-400 mb-1">Custom OpenRouter Model ID:</p>
-                <div className="flex gap-1.5">
+              <div className="pt-2 border-t border-white/10">
+                <p className="text-[10px] font-semibold text-slate-400 mb-1.5">Custom OpenRouter Model ID:</p>
+                <div className="flex gap-2">
                   <input
                     type="text"
                     placeholder="e.g. meta-llama/llama-3.1-405b-instruct"
                     value={customModelInput}
                     onChange={(e) => setCustomModelInput(e.target.value)}
-                    className="flex-1 px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-xs text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="flex-1 px-3 py-1.5 rounded-xl bg-white/[0.06] border border-white/15 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400/50"
                   />
                   <button
                     onClick={() => {
@@ -684,7 +704,7 @@ export const QuantChatBot: React.FC = () => {
                         setCustomModelInput('');
                       }
                     }}
-                    className="px-3 py-1 rounded-lg bg-white text-gray-950 text-xs font-bold hover:bg-gray-200 transition"
+                    className="px-3.5 py-1.5 rounded-xl bg-white text-slate-950 text-xs font-bold hover:bg-slate-200 transition shadow-xs"
                   >
                     Set
                   </button>
@@ -695,15 +715,15 @@ export const QuantChatBot: React.FC = () => {
 
           {/* Settings Drawer (API Key & Persona Setup) */}
           {showSettings && (
-            <div className="p-4 bg-gray-50 border-b border-gray-200 text-xs space-y-3 animate-fadeIn">
-              <div className="flex items-center justify-between font-semibold text-gray-900">
+            <div className="p-4 bg-slate-900/90 backdrop-blur-3xl border-b border-white/15 text-xs space-y-3 animate-fadeIn relative z-20">
+              <div className="flex items-center justify-between font-semibold text-white">
                 <span className="flex items-center gap-1.5">
-                  <Sliders className="w-3.5 h-3.5 text-gray-700" />
+                  <Sliders className="w-3.5 h-3.5 text-emerald-400" />
                   <span>API Key &amp; Persona Settings</span>
                 </span>
                 <button
                   onClick={() => setShowSettings(false)}
-                  className="text-[11px] text-gray-500 hover:text-gray-900"
+                  className="text-[11px] text-slate-400 hover:text-white px-2 py-0.5 rounded-full bg-white/[0.06]"
                 >
                   Done
                 </button>
@@ -711,31 +731,31 @@ export const QuantChatBot: React.FC = () => {
 
               {/* OpenRouter Key */}
               <div>
-                <label className="block text-[11px] font-semibold text-gray-700 mb-1 flex items-center justify-between">
+                <label className="block text-[11px] font-semibold text-slate-300 mb-1 flex items-center justify-between">
                   <span>OpenRouter API Key:</span>
-                  <span className="text-[10px] text-emerald-600 font-medium">Saved locally in browser</span>
+                  <span className="text-[10px] text-emerald-400 font-medium">Saved locally in browser</span>
                 </label>
-                <div className="flex items-center gap-1.5">
-                  <Key className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                <div className="flex items-center gap-2">
+                  <Key className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   <input
                     type="password"
                     placeholder="sk-or-v1-..."
                     value={openRouterKey}
                     onChange={(e) => handleSaveApiKey(e.target.value)}
-                    className="w-full px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-950"
+                    className="w-full px-3 py-1.5 rounded-xl bg-white/[0.06] border border-white/15 text-xs text-white focus:outline-none focus:border-emerald-400/50"
                   />
                 </div>
-                <p className="text-[10px] text-gray-500 mt-1">
+                <p className="text-[10px] text-slate-400 mt-1">
                   Optional for free models. Required for GPT-4o, Claude 3.5 Sonnet, and paid models.
                 </p>
               </div>
 
               {/* Persona Selector */}
               <div>
-                <label className="block text-[11px] font-semibold text-gray-700 mb-1">
+                <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">
                   Active Financial Persona:
                 </label>
-                <div className="grid grid-cols-2 gap-1.5">
+                <div className="grid grid-cols-2 gap-2">
                   {[
                     { id: 'supervisor', label: '🧠 Unified Supervisor' },
                     { id: 'underwriter', label: '🏦 Credit Underwriter' },
@@ -745,10 +765,10 @@ export const QuantChatBot: React.FC = () => {
                     <button
                       key={p.id}
                       onClick={() => setAgentPersona(p.id as any)}
-                      className={`px-2 py-1.5 rounded-lg text-[11px] font-medium border text-left transition ${
+                      className={`px-2.5 py-1.5 rounded-xl text-[11px] font-medium border text-left transition backdrop-blur-md ${
                         agentPersona === p.id
-                          ? 'bg-gray-950 text-white border-gray-950 font-semibold'
-                          : 'bg-white text-gray-700 border-gray-200 hover:border-gray-400'
+                          ? 'bg-emerald-500/20 text-white border-emerald-400/40 font-semibold'
+                          : 'bg-white/[0.04] text-slate-300 border-white/10 hover:bg-white/[0.08]'
                       }`}
                     >
                       {p.label}
@@ -760,18 +780,19 @@ export const QuantChatBot: React.FC = () => {
           )}
 
           {/* Active Model & Oracle Banner */}
-          <div className="px-4 py-1.5 bg-emerald-50 border-b border-emerald-100 flex items-center justify-between text-[11px] text-emerald-900">
+          <div className="px-4 py-1.5 bg-white/[0.02] border-b border-white/[0.06] flex items-center justify-between text-[11px] text-slate-300 relative z-10">
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-              <span>Active Model: <strong className="font-semibold">{activeModel.name}</strong></span>
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>Active Model: <strong className="font-semibold text-white">{activeModel.name}</strong></span>
             </div>
-            <span className="text-[10px] text-emerald-700 font-mono">
+            <span className="text-[10px] text-emerald-400 font-mono font-medium flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               Live Oracle Active
             </span>
           </div>
 
-          {/* Chat Messages Stream */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3.5 bg-[#f5f5f7]">
+          {/* Chat Messages Stream - Claude for Dia Liquid Cards */}
+          <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-transparent relative z-10">
             {messages.map((msg) => {
               const isUser = msg.sender === 'user';
               return (
@@ -779,47 +800,47 @@ export const QuantChatBot: React.FC = () => {
                   key={msg.id}
                   className={`flex flex-col ${isUser ? 'items-end' : 'items-start'}`}
                 >
-                  <div className="flex items-center gap-1.5 mb-1 px-1 text-[10px] text-gray-400">
-                    <span className="font-semibold text-gray-700">
-                      {isUser ? 'You' : 'Quant Agent'}
+                  <div className="flex items-center gap-1.5 mb-1 px-1 text-[10px] text-slate-400">
+                    <span className="font-semibold text-slate-200">
+                      {isUser ? 'You' : 'Quant Super-Intelligence'}
                     </span>
                     <span>•</span>
                     <span>{msg.timestamp}</span>
                     {msg.liveMarketBadge && (
-                      <span className="text-emerald-700 bg-emerald-100 font-mono font-bold px-1.5 py-0.2 rounded">
+                      <span className="text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 font-mono font-bold px-2 py-0.2 rounded-full">
                         {msg.liveMarketBadge}
                       </span>
                     )}
                   </div>
 
                   <div
-                    className={`relative group max-w-[90%] sm:max-w-[85%] p-3.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-xs ${
+                    className={`relative group p-4 rounded-[24px] text-xs sm:text-sm leading-relaxed backdrop-blur-2xl transition-all ${
                       isUser
-                        ? 'bg-gray-950 text-white rounded-tr-xs'
-                        : 'bg-white text-gray-800 border border-gray-200/80 rounded-tl-xs'
+                        ? 'max-w-[85%] bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-white/[0.08] text-white border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.3)] rounded-tr-xs'
+                        : 'max-w-[90%] sm:max-w-[88%] bg-white/[0.07] text-slate-100 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.2)] rounded-tl-xs'
                     }`}
                   >
                     <div className="whitespace-pre-wrap">{msg.content}</div>
 
                     {/* ASHFX Tri-Branch Grounding Indicator */}
                     {msg.groundingBundle && !isUser && (
-                      <div className="mt-2.5 pt-2 border-t border-gray-100 flex flex-wrap items-center gap-1.5 text-[10px]">
-                        <span className="font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
-                          <Sparkles className="w-2.5 h-2.5 text-emerald-600" />
+                      <div className="mt-3 pt-2.5 border-t border-white/10 flex flex-wrap items-center gap-1.5 text-[10px]">
+                        <span className="font-semibold text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2.5 py-0.5 rounded-full flex items-center gap-1 backdrop-blur-md shadow-xs">
+                          <Sparkles className="w-2.5 h-2.5 text-emerald-400" />
                           ASHFX Routed
                         </span>
                         {msg.groundingBundle.intent.needsMarketData && (
-                          <span className="bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full">
+                          <span className="bg-blue-500/15 text-blue-300 border border-blue-400/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
                             Market: {msg.groundingBundle.marketData[0]?.symbol} ({msg.groundingBundle.marketData[0]?.price})
                           </span>
                         )}
                         {msg.groundingBundle.intent.needsNewsEvents && (
-                          <span className="bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">
+                          <span className="bg-amber-500/15 text-amber-300 border border-amber-400/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
                             Macro/Fed/SEC
                           </span>
                         )}
                         {msg.groundingBundle.intent.needsKnowledgeBase && (
-                          <span className="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full">
+                          <span className="bg-purple-500/15 text-purple-300 border border-purple-400/30 px-2.5 py-0.5 rounded-full backdrop-blur-md">
                             ConfluX Rules
                           </span>
                         )}
@@ -827,15 +848,15 @@ export const QuantChatBot: React.FC = () => {
                     )}
 
                     {/* Metadata & Copy action */}
-                    <div className="mt-2.5 pt-2 border-t border-gray-100/60 flex items-center justify-between text-[10px] text-gray-400">
+                    <div className="mt-3 pt-2 border-t border-white/[0.08] flex items-center justify-between text-[10px] text-slate-400">
                       <span className="font-mono">{msg.modelUsed || activeModel.name}</span>
                       <button
                         onClick={() => copyToClipboard(msg.content, msg.id)}
-                        className="opacity-0 group-hover:opacity-100 transition p-1 hover:text-gray-900"
+                        className="opacity-0 group-hover:opacity-100 transition p-1 hover:text-white rounded-md hover:bg-white/10"
                         title="Copy to clipboard"
                       >
                         {copiedId === msg.id ? (
-                          <Check className="w-3 h-3 text-emerald-600" />
+                          <Check className="w-3 h-3 text-emerald-400" />
                         ) : (
                           <Copy className="w-3 h-3" />
                         )}
@@ -847,12 +868,12 @@ export const QuantChatBot: React.FC = () => {
             })}
 
             {isLoading && (
-              <div className="flex items-center gap-2 p-3 rounded-2xl bg-white border border-gray-200 text-xs text-gray-600 animate-pulse w-fit">
-                <div className="w-2 h-2 rounded-full bg-gray-950 animate-bounce"></div>
-                <div className="w-2 h-2 rounded-full bg-gray-950 animate-bounce delay-100"></div>
-                <div className="w-2 h-2 rounded-full bg-gray-950 animate-bounce delay-200"></div>
-                <span className="ml-1 text-[11px] font-medium text-gray-500">
-                  Routing query &amp; querying {activeModel.name} with live oracle...
+              <div className="flex items-center gap-2.5 p-3.5 rounded-[22px] bg-white/[0.07] border border-white/15 backdrop-blur-xl text-xs text-slate-300 animate-pulse w-fit shadow-md">
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-bounce"></div>
+                <div className="w-2 h-2 rounded-full bg-teal-400 animate-bounce delay-100"></div>
+                <div className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce delay-200"></div>
+                <span className="ml-1 text-[11px] font-medium text-slate-300">
+                  Routing query &amp; synthesizing with {activeModel.name}...
                 </span>
               </div>
             )}
@@ -860,9 +881,9 @@ export const QuantChatBot: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Pre-Set Prompt Suggestions */}
-          <div className="px-3 py-2 bg-white border-t border-gray-100 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-            <span className="text-[10px] font-bold text-gray-400 uppercase shrink-0">Prompts:</span>
+          {/* Quick Pre-Set Prompt Suggestions (Dia Liquid Pills) */}
+          <div className="px-3 py-2 bg-white/[0.02] border-t border-white/[0.08] flex items-center gap-1.5 overflow-x-auto no-scrollbar relative z-10">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider shrink-0">Prompts:</span>
             {[
               'What is the live Bitcoin (BTC) price, and what is the ConfluX OTE setup?',
               'How does Fed rate policy impact Gold (XAU/USD) sweeps?',
@@ -873,36 +894,38 @@ export const QuantChatBot: React.FC = () => {
                 key={idx}
                 onClick={() => handleSendMessage(p)}
                 disabled={isLoading}
-                className="px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-[11px] text-gray-700 whitespace-nowrap transition disabled:opacity-50"
+                className="px-3 py-1 rounded-full bg-white/[0.06] hover:bg-white/[0.14] border border-white/15 text-[11px] text-slate-200 whitespace-nowrap transition backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-50"
               >
                 {p}
               </button>
             ))}
           </div>
 
-          {/* Chat Input Bar */}
+          {/* Floating Liquid Input Capsule (Dia Signature Element) */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSendMessage();
             }}
-            className="p-3 bg-white border-t border-gray-200/80 flex items-center gap-2"
+            className="p-3 bg-white/[0.03] backdrop-blur-2xl border-t border-white/10 relative z-10"
           >
-            <input
-              type="text"
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              placeholder="Ask anything (e.g. 'What is the exact BTC price today?')..."
-              disabled={isLoading}
-              className="flex-1 px-4 py-2.5 rounded-full bg-gray-100 border border-gray-200 text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-950 disabled:opacity-50 transition"
-            />
-            <button
-              type="submit"
-              disabled={!inputMessage.trim() || isLoading}
-              className="p-2.5 rounded-full bg-gray-950 text-white hover:bg-gray-800 disabled:opacity-40 transition shadow-xs"
-            >
-              <Send className="w-4 h-4" />
-            </button>
+            <div className="relative flex items-center gap-2 p-1.5 pl-4 rounded-full bg-white/[0.07] hover:bg-white/[0.1] focus-within:bg-white/[0.12] border border-white/20 focus-within:border-emerald-400/50 backdrop-blur-3xl shadow-[0_12px_32px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.3)] transition-all">
+              <input
+                type="text"
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                placeholder="Ask anything (e.g. 'What is the exact BTC price today?')..."
+                disabled={isLoading}
+                className="flex-1 bg-transparent text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={!inputMessage.trim() || isLoading}
+                className="w-9 h-9 rounded-full bg-gradient-to-tr from-emerald-400 to-teal-300 text-slate-950 flex items-center justify-center hover:scale-105 active:scale-95 transition shadow-[0_0_16px_rgba(52,211,153,0.5)] disabled:opacity-40 disabled:hover:scale-100 shrink-0"
+              >
+                <Send className="w-4 h-4 fill-slate-950 stroke-none" />
+              </button>
+            </div>
           </form>
 
         </div>
