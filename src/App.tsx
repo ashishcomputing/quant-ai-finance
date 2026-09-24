@@ -7,6 +7,7 @@ import { AgentSwarmConsole } from './components/AgentSwarmConsole';
 import { StatefulMemoryInspector } from './components/StatefulMemoryInspector';
 import { RoiImpactSection } from './components/RoiImpactSection';
 import { LiveInteractiveSandbox } from './components/LiveInteractiveSandbox';
+import { QuantChatBot } from './components/QuantChatBot';
 import { Footer } from './components/Footer';
 import { Layers, Activity, Database, TrendingUp, Users, Terminal, X } from 'lucide-react';
 
@@ -144,6 +145,9 @@ export function App() {
           </div>
         </div>
       )}
+
+      {/* Embedded & Floating Quant AI Chatbot with Free/Fee Models */}
+      <QuantChatBot />
 
       {/* Quant Footer */}
       <Footer />
