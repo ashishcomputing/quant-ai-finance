@@ -29,8 +29,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5f5f7] text-gray-950 font-sans selection:bg-gray-950 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f5f5f7] text-gray-950 font-sans selection:bg-gray-950 selection:text-white relative overflow-x-hidden">
       
+      {/* Ambient Page-Level Glow Spots for Header Liquid Glass Refraction */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-48 bg-gradient-to-r from-emerald-400/20 via-teal-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-48 bg-gradient-to-l from-indigo-400/20 via-purple-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+
       {/* Quant Top Navigation */}
       <Header
         activeTab={activeTab}
