@@ -1,6 +1,7 @@
-# Quant TAOS • Autonomous Financial Operating System
-
 > Inspired by and built upon the core architecture of **[Quant.ai](https://www.quant.ai/en)**: *The Temporal Agentic Operating System (TAOS)*.
+
+### 🌐 Live Deployment: [https://quant-ai-finance.vercel.app](https://quant-ai-finance.vercel.app)
+### 🐙 GitHub Repository: [https://github.com/ashishcomputing/quant-ai-finance](https://github.com/ashishcomputing/quant-ai-finance)
 
 ---
 
