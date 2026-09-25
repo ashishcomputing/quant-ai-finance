@@ -178,6 +178,7 @@ export const QuantChatBot: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
 
   const activeModel = AVAILABLE_MODELS.find((m) => m.id === selectedModelId) || {
     id: selectedModelId,
@@ -248,6 +249,26 @@ export const QuantChatBot: React.FC = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  // Close chat when clicking outside or to the side of the chat window
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        isOpen &&
+        chatWindowRef.current &&
+        !chatWindowRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, [isOpen]);
 
   const handleSelectModel = (modelId: string) => {
@@ -528,9 +549,20 @@ export const QuantChatBot: React.FC = () => {
         </button>
       )}
 
+      {/* Click-away backdrop overlay - Closes chat when clicked to the side or outside */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-[1px] transition-opacity duration-200 animate-fadeIn cursor-pointer"
+          title="Click to close chat"
+          aria-label="Click outside to close chat"
+        />
+      )}
+
       {/* Floating Chat Window - Minimal Liquid Glass Aesthetic */}
       {isOpen && (
         <div
+          ref={chatWindowRef}
           className={`fixed z-50 rounded-[28px] overflow-hidden flex flex-col transition-all duration-300 animate-fadeIn bg-slate-950/85 backdrop-blur-3xl backdrop-saturate-200 border border-white/20 text-slate-100 shadow-[0_24px_70px_rgba(0,0,0,0.65),inset_0_1px_1px_rgba(255,255,255,0.3)] ${
             isExpanded
               ? 'inset-4 sm:inset-10'

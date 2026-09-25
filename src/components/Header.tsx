@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Cpu, ShieldCheck, Activity, Terminal } from 'lucide-react';
 
 interface HeaderProps {
@@ -8,6 +8,30 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenTerminal }) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 8) {
+        // Scrolling down -> slide out smoothly
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 6) {
+        // Scrolling up -> slide in smoothly
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const navItems = [
     { id: 'overview', label: 'Overview' },
     { id: 'ashfx-pipeline', label: '⚡ ASHFX AI Pipeline' },
@@ -19,7 +43,11 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenT
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-3 px-3 sm:px-6 lg:px-8 transition-all">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full pt-3 px-3 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-28 opacity-0 pointer-events-none'
+      }`}
+    >
       {/* Ambient Aurora Light Bars Behind the Floating Glass Header */}
       <div className="max-w-7xl mx-auto relative">
         <div className="absolute -top-6 left-12 w-80 h-20 bg-gradient-to-r from-emerald-400/30 to-teal-400/20 rounded-full blur-2xl pointer-events-none animate-pulse" />
